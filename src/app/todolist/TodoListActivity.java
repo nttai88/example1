@@ -1,7 +1,6 @@
 package app.todolist;
 
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -11,7 +10,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class TodoListActivity extends Activity {
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,9 +23,7 @@ public class TodoListActivity extends Activity {
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if (event.getAction() == KeyEvent.ACTION_DOWN)
 					if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
-						
 						EditText edittxt = (EditText)v;
-						
 						todoItems.add(0, edittxt.getText().toString());
 						arrayAdapter.notifyDataSetChanged();
 						edittxt.setText("");
